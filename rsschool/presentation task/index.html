@@ -1,0 +1,67 @@
+<!doctype html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" name="viewport">
+
+        <title>reveal.js</title>
+
+        <link href="../../css/reset.css" rel="stylesheet">
+        <link href="../../css/reveal.css" rel="stylesheet">
+        <link href="../../css/theme/black.css" rel="stylesheet">
+        <link href="../../lib/css/monokai.css" rel="stylesheet">
+        <script>
+            var link = document.createElement('link');
+            link.rel = 'stylesheet';
+            link.type = 'text/css';
+            link.href = window.location.search.match(/print-pdf/gi) ? '../../css/print/pdf.css' : '../../css/print/paper.css';
+            document.getElementsByTagName('head')[0].appendChild(link);
+        </script>
+    </head>
+    <body>
+        <div class="reveal">
+            <div class="slides">
+                <section>
+                    <section><img alt="promo" src="img/maxresdefault.jpg"></section>
+                </section>
+                <section>
+                    <section>
+                        <h2>What is a WebAssembly...?</h2>
+                        <p>WebAssembly (Wasm) is a new type of code that can be run in modern web browsers — it is a low-level assembly-like language with a compact binary format that runs with near-native performance and provides languages such as C/C++ and Rust with a compilation target so that they can run on the web. It is also designed to run alongside JavaScript, allowing both to work together.</p>
+                    </section>
+                    <section>
+                        <h3>In a Nutshell</h3>
+                        <p>WebAssembly has huge implications for the web platform — it provides a way to run code written in multiple languages on the web at near native speed, with client apps running on the web that previously couldn’t have done so.</p>
+                        <a href="https://www.w3.org/wasm/" target="_blank">
+                            W3C WebAssembly Working Group
+                        </a>
+                        <br>
+                        <a href="https://www.w3.org/community/webassembly/" target="_blank">
+                            Community Group
+                        </a>
+                    </section>
+                </section>
+            </div>
+        </div>
+
+        <script src="../../js/reveal.js"></script>
+
+        <script>
+            Reveal.initialize({
+                dependencies: [
+                    {
+                        src: '../../plugin/markdown/marked.js'
+                    }, {
+                        src: '../../plugin/markdown/markdown.js'
+                    }, {
+                        src: '../../plugin/notes/notes.js',
+                        async: true
+                    }, {
+                        src: '../../plugin/highlight/highlight.js',
+                        async: true
+                    }
+                ]
+            });
+        </script>
+    </body>
+</html>
