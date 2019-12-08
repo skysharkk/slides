@@ -23,6 +23,15 @@ body {
   margin: 0;
   background-color: #fff;
   color: #000; }
+ .group {
+   display: flex;
+   justify-content: space-between;
+   align-items: center;
+ }
+ .wd {
+   width: 50%;
+   border: none;
+ }
 
 /*********************************************
  * VIEW FRAGMENTS

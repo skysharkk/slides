@@ -41,6 +41,99 @@
                         </a>
                     </section>
                 </section>
+                <section>
+                    <h2>WebAssembly goals:</h2>
+                    <ul>
+                        <li>Be fast, efficient, and portable</li>
+                        <li>Be readable and debuggable</li>
+                        <li>Keep secure</li>
+                        <li>Don't break the web</li>
+                    </ul>
+                </section>
+                <section>
+                    <h2>Language support:</h2>
+                    <ul>
+                        <li>C/C++</li>
+                        <li>Rust</li>
+                        <li>Java</li>
+                        <li>Kotlin</li>
+                        <li>Go</li>
+                        <li>C#</li>
+                        <li>TypeScript</li>
+                    </ul>
+                </section>
+                <section>
+                    <section>
+                        <h2>Stages:</h2>
+                        <div class="group">
+                            <ol class="wd">
+                                <li>Write</li>
+                                <li>Compile</li>
+                                <li>Include</li>
+                                <li>Instantiate</li>
+                            </ol>
+                            <img src="./img/webassembly-101-bringing-bytecode-to-the-web-1373.png" alt="bringing" class="wd">
+                        </div>
+                    </section>
+                    <section>
+                        <h2>How to compile?</h2>
+                        <div class="group">
+                            <div class="fragment">
+                                <ul>
+                                    <li>WasmFiddle</li>
+                                    <li>WasmFiddle++</li>
+                                    <li>WasmExplorer</li>
+                                </ul>
+                            </div>
+                            <div class="fragment wd">
+                                <p class=>or Emscripten</p>
+                                <img src="./img/Image.png" alt="Emscripten">
+                            </div>
+                        </div>
+                    </section>
+                    <section>
+                        <img src="./img/emscripten-diagram.png" alt="Emscripten">
+                    </section>
+                </section>
+                <section>
+                    <section>
+                        <h2>example</h2>
+                        <div class="fragment">
+                            <img src="./img/exemp.png" alt="example">
+                        </div>
+                    </section>
+                    <section>
+                        <h2>steps</h2>
+                        <ul>
+                            <li>Get our .wasm binary file into an array buffer</li>
+                            <li>Compile the bytes into a WebAssembly module</li>
+                            <li>Instantiate the WebAssembly module</li>
+                        </ul>
+                        <pre class="fragment"><code class="hljs">
+                            let squarer;
+
+                            function loadWebAssembly(fileName) {
+                                return fetch(fileName)
+                                    .then(response => response.arrayBuffer())
+                                    .then(bits => WebAssembly.compile(bits))
+                                    .then(module => { return new WebAssembly.Instance(module) });
+                            };
+
+                            loadWebAssembly('squarer.wasm')
+                                .then(instance => {
+                                    squarer = instance.exports._Z7squareri;
+                                    console.log('Finished compiling! Ready when you are...');
+                                });
+					    </code></pre>
+                    </section>
+                    <section>
+                        <img src="./img/0_MCh6p3QiWGPbnQ53.png" alt="result">
+                    </section>
+                </section>
+                <section>
+                    <h2>In concluding</h2>
+                    <img src="./img/a4fe5da03dbbf5ee42d599480e676428.png" alt="finish">
+                </section>
             </div>
         </div>
 
